@@ -1,0 +1,18 @@
+attrs: ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+T per backbone (rows=attr, cols=dino/clip/siglip):
+[[ 0.267  0.12   0.334]
+ [ 0.253  0.164  0.233]
+ [-0.021 -0.101 -0.093]
+ [ 0.289  0.264  0.409]
+ [-0.109 -0.121 -0.072]
+ [ 0.071  0.208  0.148]
+ [ 0.192  0.154  0.133]]
+
+Kendall's W = 0.849
+(1=완전일치, 0=무작위. >0.7이면 백본 무관하게 순위 안정)
+
+Interpretation: W=0.849 indicates strong agreement across three
+architecturally distinct backbones on the ranking of attribute transfer
+shifts. The photo→art transfer pattern is a property of the domain pair,
+not an artifact of any single representation. Sign agreement is unanimous:
+DoF and Object negative across all backbones, the other five positive.

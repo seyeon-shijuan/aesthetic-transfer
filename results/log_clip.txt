@@ -1,0 +1,22 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6739.23it/s]
+clip aadb:train  8458 imgs
+  0/8458
+  2560/8458
+  5120/8458
+  7680/8458
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_aadb_train.npy
+clip aadb:test  1000 imgs
+  0/1000
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_aadb_test.npy
+clip baid:test  6394 imgs
+  0/6394
+  2560/6394
+  5120/6394
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_baid_test.npy
+clip ava:test  4976 imgs
+  0/4976
+  2560/4976
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_ava_test.npy

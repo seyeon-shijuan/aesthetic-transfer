@@ -1,0 +1,15 @@
+attr           domain  dinov2    clip siglip2
+ColorHarmony   ava      0.197   0.220   0.261
+ColorHarmony   baid    -0.070   0.100  -0.073
+Content        ava      0.308   0.395   0.402
+Content        baid     0.055   0.231   0.169
+DoF            ava      0.084   0.116   0.135
+DoF            baid     0.105   0.217   0.228
+Light          ava      0.297   0.392   0.452
+Light          baid     0.008   0.128   0.043
+Object         ava      0.112   0.149   0.169
+Object         baid     0.221   0.270   0.241
+Repetition     ava      0.086   0.099   0.075
+Repetition     baid     0.015  -0.109  -0.073
+VividColor     ava      0.166   0.171   0.199
+VividColor     baid    -0.026   0.017   0.066

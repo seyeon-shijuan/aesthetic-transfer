@@ -1,0 +1,24 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 4289.90it/s]
+siglip2 aadb:train  8458 imgs
+  0/8458
+  2560/8458
+  5120/8458
+  7680/8458
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/siglip2_aadb_train.npy
+siglip2 aadb:test  1000 imgs
+  0/1000
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/siglip2_aadb_test.npy
+siglip2 baid:test  6394 imgs
+  0/6394
+  2560/6394
+  5120/6394
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/siglip2_baid_test.npy
+siglip2 ava:test  4976 imgs
+  0/4976
+  2560/4976
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/siglip2_ava_test.npy

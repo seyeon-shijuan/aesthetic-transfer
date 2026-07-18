@@ -1,0 +1,58 @@
+Gate results (tau=0.30, unanimous across 3 backbones)
+=====================================================
+attr              dinov2   clip   siglip2   verdict
+BalacingElements   0.266   0.284   0.296    unreadable
+ColorHarmony       0.438   0.492   0.476    READABLE
+Content            0.585   0.642   0.655    READABLE
+DoF                0.503   0.518   0.527    READABLE
+Light              0.367   0.457   0.487    READABLE
+MotionBlur         0.106   0.196   0.172    unreadable
+Object             0.668   0.706   0.710    READABLE
+Repetition         0.353   0.402   0.387    READABLE
+RuleOfThirds       0.248   0.263   0.252    unreadable
+Symmetry           0.228   0.276   0.257    unreadable
+VividColor         0.525   0.692   0.684    READABLE
+
+READABLE 7/11: ColorHarmony, Content, DoF, Light, Object, Repetition, VividColor
+Unreadable 4/11 (all spatial/composition): RuleOfThirds, Symmetry, BalacingElements, MotionBlur
+
+
+
+(advanced_ai) seyeon@ubuntu-System-Product-Name:/data2/seyeon/myjob/aesthetic-transfer$ python -m src.probe
+attr               dinov2     clip  siglip2   verdict
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+BalacingElements    0.266    0.284    0.296   unreadable
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+ColorHarmony        0.438    0.492    0.476   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+Content             0.585    0.642    0.655   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+DoF                 0.503    0.518    0.527   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+Light               0.367    0.457    0.487   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+MotionBlur          0.106    0.196    0.172   unreadable
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+Object              0.668    0.706    0.710   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+Repetition          0.353    0.402    0.387   READABLE
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+RuleOfThirds        0.248    0.263    0.252   unreadable
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+Symmetry            0.228    0.276    0.257   unreadable
+/data2/seyeon/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.6789e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+VividColor          0.525    0.692    0.684   READABLE
+
+τ=0.3 · Consistent across all three backbones · READABLE 7/11: ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+RuleOfThirds, Symmetry, BalacingElements, MotionBlur -> unavailable
