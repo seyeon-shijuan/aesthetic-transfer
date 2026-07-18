@@ -46,7 +46,9 @@ def main():
             Mte, lte = aadb_attr_matrix("test")
             Xte, Mte = align(Xte, fte, lte, Mte)
 
-            g = Ridge(alpha=1.0).fit(Xtr, Mtr[:, ai+1])
+            # g = Ridge(alpha=1.0).fit(Xtr, Mtr[:, ai+1])
+            g = Ridge(alpha=10.0).fit(Xtr, Mtr[:, ai+1])
+            
             pred = g.predict(Xte)
             gates[bb] = scipy.stats.spearmanr(pred, Mte[:, ai+1]).correlation
         ok = all(v >= TAU for v in gates.values())
