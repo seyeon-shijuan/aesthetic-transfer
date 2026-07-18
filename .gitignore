@@ -1,0 +1,72 @@
+# ─── Large data / artifacts (never commit) ───────────────────
+cache/
+datasets/
+ckpt/
+checkpoint/
+*.npy
+*.npz
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.zip
+*.tar
+*.tar.gz
+*.h5
+*.mat
+images/
+*.jpg
+*.jpeg
+*.png
+# keep figures for the paper if you want them tracked:
+!paper/figures/*.png
+!paper/figures/*.pdf
+
+# ─── Results you DO want tracked ─────────────────────────────
+# (results/ is tracked by default; only ignore heavy dumps)
+results/**/*.npy
+results/**/*.pkl
+
+# ─── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.ipynb_checkpoints/
+
+# ─── Virtual environments ────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ─── VSCode ──────────────────────────────────────────────────
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ─── PyCharm / JetBrains ─────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ─── OS junk ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*~
+.*.swp
+
+# ─── Logs / temp ─────────────────────────────────────────────
+*.log
+tmp/
+temp/
+wandb/
+runs/
