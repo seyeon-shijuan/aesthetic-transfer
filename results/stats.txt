@@ -1,0 +1,40 @@
+Precomputing probes (once)...
+done.
+
+========================================================================
+1. TRANSFER SHIFT  T_a = r_photo - r_art   (bootstrap 95% CI over 3 backbones)
+========================================================================
+attr               T_a             95% CI  reversal p
+ColorHarmony    +0.240 [+0.209, +0.270]      0.0000
+Content         +0.216 [+0.188, +0.244]      0.0000
+DoF             -0.072 [-0.102, -0.042]      0.0000  <-- reversal
+Light           +0.320 [+0.293, +0.347]      0.0000
+Object          -0.102 [-0.133, -0.069]      0.0000  <-- reversal
+Repetition      +0.142 [+0.112, +0.172]      0.0000
+VividColor      +0.158 [+0.126, +0.189]      0.0000
+
+========================================================================
+2. KENDALL'S W  permutation test
+========================================================================
+W_observed = 0.8492
+null mean = 0.3342 | p-value = 0.00100 (n=5000)
+  -> significant
+
+========================================================================
+3. MODEL GRID  art (BAID) SRCC  bootstrap 95% CI
+========================================================================
+Q-Align (photo)      SRCC=0.126  95% CI [0.102, 0.151]
+Aes-V2.5 (photo)     SRCC=0.009  95% CI [-0.013, 0.032]
+ArtiMuse (multi)     SRCC=0.199  95% CI [0.177, 0.223]
+
+  ArtiMuse vs Q-Align: mean diff=+0.073, P(Arti<=QAlign)=0.0000 -> ArtiMuse significantly higher
+
+========================================================================
+4. COVERAGE  R2_attr/R2_full  bootstrap 95% CI
+========================================================================
+ava    coverage=0.450  95% CI [0.420, 0.477]
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.38534e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+baid   coverage=0.030  95% CI [-0.150, 0.163]
+
+Done.

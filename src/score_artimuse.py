@@ -32,7 +32,7 @@ def parse_score(resp):
 def score_domain(model, tok, domain, dev, bs=8):
     sc = baid_scores("test") if domain=="baid" else ava_scores()
     names = [n for n in names_of(domain) if n in sc]
-    preds, gts = [], []
+    preds, gts, kept_names = [], [], []
     buf_pv, buf_n = [], []
 
     def flush():
@@ -44,7 +44,7 @@ def score_domain(model, tok, domain, dev, bs=8):
         for n, r in zip(buf_n, resps):
             s = parse_score(r)
             if s is not None:
-                preds.append(s); gts.append(sc[n])
+                preds.append(s); gts.append(sc[n]); kept_names.append(n)
         buf_pv.clear(); buf_n.clear()
 
     for i, n in enumerate(names):
@@ -60,6 +60,7 @@ def score_domain(model, tok, domain, dev, bs=8):
     srcc = scipy.stats.spearmanr(preds, gts).correlation
     plcc = scipy.stats.pearsonr(preds, gts)[0]
     np.save(f"{CACHE}/artimuse_{domain}_scores.npy", np.array(preds))
+    open(f"{CACHE}/artimuse_{domain}_names.txt","w").write("\n".join(kept_names))
     print(f"ArtiMuse {domain}: n={len(preds)} SRCC={srcc:.4f} PLCC={plcc:.4f}", flush=True)
     return srcc
 

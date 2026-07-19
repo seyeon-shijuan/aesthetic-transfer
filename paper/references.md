@@ -19,3 +19,7 @@
 [9] Kendall's W 출처 (필요 시): M. G. Kendall and B. Babington Smith,
     "The Problem of m Rankings," Ann. Math. Statist., 1939.
 -->
+
+[7] H. Wu, Z. Zhang, W. Zhang, C. Chen, L. Liao, C. Li, et al., "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels," in *Proc. Int. Conf. Machine Learning (ICML)*, 2024. arXiv:2312.17090.
+
+[8] S. Cao, N. Ma, J. Li, X. Li, et al., "ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding," *arXiv preprint arXiv:2507.14533*, 2025.
