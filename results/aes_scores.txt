@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/448 [00:00<?, ?it/s]Loading weights:  90%|████████▉ | 403/448 [00:00<00:00, 4002.53it/s]Loading weights: 100%|██████████| 448/448 [00:00<00:00, 3968.89it/s]
+=== Aes-V2.5 scoring ===
+  ava 0/4976
+  ava 1000/4976
+  ava 2000/4976
+  ava 3000/4976
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  ava 4000/4976
+Aes-V2.5 ava: n=4976 SRCC=0.4730 PLCC=0.4833
+  baid 0/6394
+  baid 1000/6394
+  baid 2000/6394
+  baid 3000/6394
+  baid 4000/6394
+  baid 5000/6394
+  baid 6000/6394
+Aes-V2.5 baid: n=6394 SRCC=0.0091 PLCC=0.0135
+
+Aes-V2.5  photo(AVA)=0.4730  art(BAID)=0.0091  drop=0.4639

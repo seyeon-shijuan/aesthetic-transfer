@@ -1,0 +1,5 @@
+=== Model grid: cross-domain aesthetic SRCC ===
+Model      Type         AVA(photo)  BAID(art)   drop
+Q-Align    photo-spec   0.817       0.126       0.691
+Aes-V2.5   photo-spec   0.473       0.009       0.464
+SAAN       art-spec     ---         0.472       (in-domain only)

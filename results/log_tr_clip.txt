@@ -1,0 +1,146 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   1%|          | 3/398 [00:01<02:55,  2.25it/s]Loading weights:  27%|██▋       | 109/398 [00:01<00:02, 104.13it/s]Loading weights:  43%|████▎     | 170/398 [00:02<00:02, 105.74it/s]Loading weights:  52%|█████▏    | 208/398 [00:02<00:01, 108.20it/s]Loading weights:  59%|█████▉    | 236/398 [00:02<00:01, 97.64it/s] Loading weights:  65%|██████▍   | 257/398 [00:03<00:01, 83.66it/s]Loading weights:  69%|██████▊   | 273/398 [00:03<00:01, 70.61it/s]Loading weights:  73%|███████▎  | 289/398 [00:03<00:01, 79.22it/s]Loading weights:  76%|███████▌  | 303/398 [00:03<00:01, 85.48it/s]Loading weights:  80%|████████  | 319/398 [00:03<00:00, 80.70it/s]Loading weights:  83%|████████▎ | 330/398 [00:04<00:00, 77.53it/s]Loading weights:  88%|████████▊ | 351/398 [00:04<00:00, 86.13it/s]Loading weights:  91%|█████████ | 361/398 [00:04<00:00, 58.15it/s]Loading weights: 100%|██████████| 398/398 [00:04<00:00, 83.27it/s]
+clip baid:train  50695 imgs
+  0/50695
+  2560/50695
+  5120/50695
+  7680/50695
+  10240/50695
+  12800/50695
+  15360/50695
+  17920/50695
+  20480/50695
+  23040/50695
+  25600/50695
+  28160/50695
+  30720/50695
+  33280/50695
+  35840/50695
+  38400/50695
+  40960/50695
+  43520/50695
+  46080/50695
+  48640/50695
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_baid_train.npy
+Traceback (most recent call last):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 86, in <module>
+    main()
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 73, in main
+    names, paths = get_paths(ds, split)
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 39, in get_paths
+    ids = [l.strip() for l in open(f)]
+FileNotFoundError: [Errno 2] No such file or directory: '/data2/seyeon/datasets/AVA_raw/AVA_dataset/aesthetics_image_lists/generic_train.jpgl'
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   1%|          | 3/398 [00:00<00:43,  9.11it/s]Loading weights:  38%|███▊      | 151/398 [00:00<00:00, 454.07it/s]Loading weights:  60%|██████    | 239/398 [00:00<00:00, 269.82it/s]Loading weights:  74%|███████▍  | 295/398 [00:01<00:00, 200.01it/s]Loading weights:  84%|████████▍ | 334/398 [00:01<00:00, 180.01it/s]Loading weights:  91%|█████████▏| 364/398 [00:01<00:00, 166.51it/s]Loading weights: 100%|██████████| 398/398 [00:01<00:00, 209.21it/s]
+clip ava:train  19922 imgs
+  0/19922
+  2560/19922
+  5120/19922
+  7680/19922
+  10240/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  12800/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  15360/19922
+Traceback (most recent call last):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 86, in <module>
+    main()
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 78, in main
+    for i, x in enumerate(dl):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 708, in __next__
+    data = self._next_data()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1455, in _next_data
+    return self._process_data(data)
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1505, in _process_data
+    data.reraise()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/_utils.py", line 733, in reraise
+    raise exception
+OSError: Caught OSError in DataLoader worker process 1.
+Original Traceback (most recent call last):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 51, in __getitem__
+    return self.proc(images=Image.open(self.paths[i]).convert("RGB"),
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/Image.py", line 1069, in convert
+    self.load()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/ImageFile.py", line 409, in load
+    raise OSError(msg)
+OSError: image file is truncated (11 bytes not processed)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5521.27it/s]
+clip ava:train  19922 imgs
+  0/19922
+  2560/19922
+  5120/19922
+  7680/19922
+  10240/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  12800/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  15360/19922
+Traceback (most recent call last):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 86, in <module>
+    main()
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 78, in main
+    for i, x in enumerate(dl):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 708, in __next__
+    data = self._next_data()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1455, in _next_data
+    return self._process_data(data)
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1505, in _process_data
+    data.reraise()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/_utils.py", line 733, in reraise
+    raise exception
+OSError: Caught OSError in DataLoader worker process 1.
+Original Traceback (most recent call last):
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/seyeon/myjob/aesthetic-transfer/src/extract.py", line 51, in __getitem__
+    return self.proc(images=Image.open(self.paths[i]).convert("RGB"),
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/Image.py", line 1069, in convert
+    self.load()
+  File "/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/ImageFile.py", line 409, in load
+    raise OSError(msg)
+OSError: image file is truncated (11 bytes not processed)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 7739.11it/s]
+clip ava:train  19922 imgs
+  0/19922
+  2560/19922
+  5120/19922
+  7680/19922
+  10240/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  12800/19922
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  15360/19922
+  17920/19922
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/clip_ava_train.npy

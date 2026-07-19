@@ -1,0 +1,12 @@
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.38534e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+domain backbone  R2_full  R2_attr  coverage
+ava    dinov2      0.319    0.127     0.400
+ava    clip        0.517    0.226     0.438
+ava    siglip2     0.529    0.271     0.513
+baid   dinov2      0.066   -0.013    -0.196
+baid   clip        0.101    0.010     0.096
+baid   siglip2     0.119    0.023     0.189
+
+coverage(photo)=0.450  coverage(art)=0.030
+headline gap = 0.420

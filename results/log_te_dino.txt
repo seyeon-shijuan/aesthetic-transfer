@@ -1,0 +1,22 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 3332.50it/s]
+dinov2 aadb:train  8458 imgs
+  0/8458
+  2560/8458
+  5120/8458
+  7680/8458
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/dinov2_aadb_train.npy
+dinov2 aadb:test  1000 imgs
+  0/1000
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/dinov2_aadb_test.npy
+dinov2 baid:test  6394 imgs
+  0/6394
+  2560/6394
+  5120/6394
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/dinov2_baid_test.npy
+dinov2 ava:test  4976 imgs
+  0/4976
+  2560/4976
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+saved /data2/seyeon/myjob/aesthetic-transfer/cache/dinov2_ava_test.npy

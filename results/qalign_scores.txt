@@ -1,0 +1,44 @@
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Instantiating LlamaAttention without passing `layer_idx` is not recommended and will to errors during the forward call, if caching is used. Please make sure to provide a `layer_idx` when creating this class.
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.47s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.24s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.58s/it]
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:389: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:394: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+=== Q-Align scoring ===
+  ava 0/4976
+  ava 500/4976
+  ava 1000/4976
+  ava 1500/4976
+  ava 2000/4976
+  ava 2500/4976
+  ava 3000/4976
+/data2/seyeon/miniconda3/envs/qalign/lib/python3.10/site-packages/PIL/TiffImagePlugin.py:950: UserWarning: Truncated File Read
+  warnings.warn(str(msg))
+  ava 3500/4976
+  ava 4000/4976
+  ava 4500/4976
+Q-Align ava: n=4976 SRCC=0.8172 PLCC=0.8121
+  baid 0/6394
+  baid 500/6394
+  baid 1000/6394
+  baid 1500/6394
+  baid 2000/6394
+  baid 2500/6394
+  baid 3000/6394
+  baid 3500/6394
+  baid 4000/6394
+  baid 4500/6394
+  baid 5000/6394
+  baid 5500/6394
+  baid 6000/6394
+Q-Align baid: n=6394 SRCC=0.1260 PLCC=0.1241
+
+Q-Align  photo(AVA)=0.8172  art(BAID)=0.1260  drop=0.6912

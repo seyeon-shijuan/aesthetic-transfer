@@ -1,6 +1,8 @@
 """이미지 → pooler feature(.npy). 사용: python -m src.extract --backbone dinov2 --gpu 0"""
 import torch, numpy as np, os, glob, re, random, argparse
 from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoModel, AutoImageProcessor
 
@@ -29,9 +31,16 @@ def get_paths(ds, split):
         names = __import__("pandas").read_csv(f"{DS}/BAID/dataset/{split}_set.csv")["image"].tolist()
         idx = _index([f"{DS}/BAID/images"])
     elif ds == "ava":                                 # 사진 (P 도메인)
-        ids = [l.strip() for l in open(f"{DS}/AVA_raw/AVA_dataset/aesthetics_image_lists/generic_test.jpgl")]
-        random.Random(42).shuffle(ids)                # freeze: seed=42, n=5000
-        names = [f"{i}.jpg" for i in ids[:5000]]
+        if split == "test":
+            f = f"{DS}/AVA_raw/AVA_dataset/aesthetics_image_lists/generic_test.jpgl"
+            ids = [l.strip() for l in open(f)]
+            random.Random(42).shuffle(ids)            # freeze: seed=42, n=5000
+            names = [f"{i}.jpg" for i in ids[:5000]]
+        elif split == "train":
+            f = f"{DS}/AVA_raw/AVA_dataset/aesthetics_image_lists/generic_ls_train.jpgl"
+            ids = [l.strip() for l in open(f)]
+            random.Random(42).shuffle(ids)            # freeze: seed=42, n=20000
+            names = [f"{i}.jpg" for i in ids[:20000]]
         idx = _index([f"{DS}/AVA_raw/AVA_dataset/image"])
     kept = [n for n in names if n in idx]
     return kept, [idx[n] for n in kept]

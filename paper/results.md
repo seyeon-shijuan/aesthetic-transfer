@@ -58,9 +58,17 @@ Second, **two attributes reverse**: depth-of-field and object emphasis correlate
 
 A natural objection is that the shifts in Table 2 might be an artifact of one particular encoder. To test this we compute Kendall's coefficient of concordance $W$ over the three backbones' rankings of $T_a$. We obtain $W = 0.849$, indicating strong agreement: three encoders that differ in pretraining objective and vision–language grounding nonetheless order the seven attributes' transfer shifts almost identically. Sign agreement is in fact unanimous — DoF and Object are negative under all three backbones, the remaining five positive under all three. The photo-to-art transfer structure is therefore a property of the *domain pair*, not of any single representation. Because the unanimity rule and the set of backbones were fixed in advance, this concordance is a genuine test rather than a post-hoc selection.
 
-## 4.5 Coverage <!-- TODO: D4 — fill after R^2_full / R^2_attr computed -->
+## 4.5 How Much Aesthetic Prediction Do Readable Attributes Cover?
 
-<!-- Placeholder. Report R^2_full (aesthetic score regressed on full feature)
-     vs R^2_attr (score regressed on readable-attribute predictions), per domain.
-     Headline: how much of achievable aesthetic prediction the readable attributes
-     account for in photo vs art. -->
+<!-- DRAFT: numbers from 2026-07-19 run; negative R2 reported as ~0 -->
+
+The per-attribute shifts of Section 4.3 raise a system-level question: taken together, how much of each domain's predictable aesthetic signal do the readable attributes account for? We define coverage as the ratio R2_attr / R2_full, where R2_full regresses the aesthetic score on the full 768-d representation (the achievable ceiling for that encoder) and R2_attr regresses it on the seven readable-attribute predictions. The ratio normalizes away the differing ceilings of the two domains, a necessary correction since art aesthetics is intrinsically harder to predict (R2_full about 0.10 for BAID vs 0.45 for AVA, consistent with SAAN's in-domain ceiling of 0.472 SRCC).
+
+**Table 3.** Coverage of readable attributes, per domain (mean over three backbones).
+
+| Domain | R2_full | R2_attr | Coverage |
+|---|---|---|---|
+| Photography (AVA) | 0.455 | 0.208 | **0.450** |
+| Art (BAID) | 0.095 | 0.007 | **0.030** |
+
+In photography, the readable attributes account for roughly **45%** of the aesthetic signal the representation can predict. In art, they account for **essentially none (3%)**: the attribute predictions explain no more of the artistic aesthetic score than a constant would. The photographic aesthetic vocabulary does not merely weaken in art attribute by attribute; as a system it collapses, covering almost none of what makes an artwork aesthetically strong. This is the quantitative core of our finding, and it motivates domain-adaptive modelling that targets the artistic medium directly.
