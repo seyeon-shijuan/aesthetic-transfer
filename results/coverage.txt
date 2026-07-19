@@ -1,0 +1,5 @@
+domain   dinov2     clip  siglip2       mean
+ava       0.122    0.214    0.254      0.197
+baid      0.060    0.093    0.100      0.084
+
+R^2(rank): 7 readable attributes 로 총점 rank를 설명하는 비율. photo↓art 이면 어휘 전이 실패.
