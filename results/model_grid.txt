@@ -1,5 +1,11 @@
 === Model grid: cross-domain aesthetic SRCC ===
-Model      Type         AVA(photo)  BAID(art)   drop
-Q-Align    photo-spec   0.817       0.126       0.691
-Aes-V2.5   photo-spec   0.473       0.009       0.464
-SAAN       art-spec     ---         0.472       (in-domain only)
+Model      Type          AVA(photo)  BAID(art)   drop
+Q-Align    photo-spec    0.817       0.126       0.691
+Aes-V2.5   photo-spec    0.473       0.009       0.464
+ArtiMuse   multi-domain  0.532       0.199       0.333
+SAAN       art-spec      ---         0.472       (in-domain only)
+
+Key: art-domain SRCC ladder
+  photo-spec (0.01, 0.13) < multi-domain (0.20) < art-spec (0.47)
+  Multi-domain training partially recovers art transfer but remains far below
+  art-specialist — motivating explicit domain adaptation.
