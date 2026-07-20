@@ -1,0 +1,52 @@
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+/data2/seyeon/miniconda3/envs/advanced_ai/lib/python3.10/site-packages/sklearn/linear_model/_ridge.py:213: LinAlgWarning: Ill-conditioned matrix (rcond=4.67977e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+======================================================================
+ABLATION 1: alpha sensitivity of gate SRCC (min over backbones)
+======================================================================
+alpha=   1.0: readable(tau=0.30) = 7/11  ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+alpha=  10.0: readable(tau=0.30) = 7/11  ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+alpha= 100.0: readable(tau=0.30) = 7/11  ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+
+======================================================================
+ABLATION 2: tau sensitivity (alpha=10, unanimity rule)
+======================================================================
+tau=0.25: readable = 8/11  ['BalacingElements', 'ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+tau=0.30: readable = 7/11  ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+tau=0.35: readable = 7/11  ['ColorHarmony', 'Content', 'DoF', 'Light', 'Object', 'Repetition', 'VividColor']
+
+======================================================================
+Per-attribute gate SRCC (alpha=10), min over 3 backbones:
+======================================================================
+  Object             min-SRCC=0.668 READABLE
+  Content            min-SRCC=0.585 READABLE
+  VividColor         min-SRCC=0.525 READABLE
+  DoF                min-SRCC=0.503 READABLE
+  ColorHarmony       min-SRCC=0.438 READABLE
+  Light              min-SRCC=0.367 READABLE
+  Repetition         min-SRCC=0.353 READABLE
+  BalacingElements   min-SRCC=0.266
+  RuleOfThirds       min-SRCC=0.248
+  Symmetry           min-SRCC=0.228
+  MotionBlur         min-SRCC=0.106
+
+Conclusion: readable set is stable across tau and alpha (only borderline attributes near tau could move).

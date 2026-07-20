@@ -12,14 +12,9 @@
 
 [6] M. Tschannen, A. Gritsenko, X. Wang, et al., "SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features," *arXiv preprint arXiv:2502.14786*, 2025.
 
-<!-- 추가 예정:
-[7] SAAN — 데이터셋 [2]와 동일 논문 (Yi et al., 2023). 본문에서 재현 대상으로 인용.
-[8] 과목 교재 (지도교수 지시 시): Course Teaching Group, "Advanced Artificial
-    Intelligence Course Comprehensive Teaching Materials," HITSZ, 2026.
-[9] Kendall's W 출처 (필요 시): M. G. Kendall and B. Babington Smith,
-    "The Problem of m Rankings," Ann. Math. Statist., 1939.
--->
-
 [7] H. Wu, Z. Zhang, W. Zhang, C. Chen, L. Liao, C. Li, et al., "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels," in *Proc. Int. Conf. Machine Learning (ICML)*, 2024. arXiv:2312.17090.
 
 [8] S. Cao, N. Ma, J. Li, X. Li, et al., "ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding," *arXiv preprint arXiv:2507.14533*, 2025.
+
+[9] Kendall's W 출처 (필요 시): M. G. Kendall and B. Babington Smith,
+    "The Problem of m Rankings," Ann. Math. Statist., 1939.
