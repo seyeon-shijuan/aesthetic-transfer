@@ -17,7 +17,7 @@ The ridge penalty keeps the probe low-capacity by design. A linear probe [8] tha
 **Attribute explanatory power.** Given a fitted probe, we measure how well the *predicted* attribute explains the *human aesthetic score* in an arbitrary domain $\mathcal{D}$, using Spearman's rank correlation coefficient (SRCC):
 
 ```math
-r_a(\mathcal{D}, \varphi) \;=\; \operatorname{SRCC}\Big( \big\{\, g_a(\varphi(x)) \,\big\}_{x \in \mathcal{D}},\; \big\{\, s(x) \,\big\}_{x \in \mathcal{D}} \Big) . \qquad (2)
+r_a(\mathcal{D}, \varphi) \;=\; \mathrm{SRCC}\Big( \big\{\, g_a(\varphi(x)) \,\big\}_{x \in \mathcal{D}},\; \big\{\, s(x) \,\big\}_{x \in \mathcal{D}} \Big) . \qquad (2)
 ```
 
 We use rank correlation rather than $R^2$ so that the quantity is invariant to any monotonic rescaling between the probe output and the aesthetic score. This invariance is not a cosmetic choice: the probe is trained to predict an AADB attribute on a $[0,1]$-style scale, but is then correlated against aesthetic scores on entirely different scales in AVA and BAID. A rank statistic asks only whether the probe *orders* images the way human aesthetic preference does — which is the question of transfer, and sidesteps the incomparable score distributions of the two target datasets.
@@ -25,7 +25,7 @@ We use rank correlation rather than $R^2$ so that the quantity is invariant to a
 **Readability gate.** An attribute is admitted to the analysis only if its probe reads reliably on held-out attribute-source data, *unanimously* across all three backbones:
 
 ```math
-\operatorname{gate}_a \;=\; \min_{\varphi \in \Phi} \, r_a\big(\mathcal{D}_A^{\text{test}}, \varphi\big), \qquad a \ \text{ is readable} \iff \operatorname{gate}_a \geq \tau . \qquad (3)
+\mathrm{gate}_a \;=\; \min_{\varphi \in \Phi} \, r_a\big(\mathcal{D}_A^{\text{test}}, \varphi\big), \qquad a \ \text{ is readable} \iff \mathrm{gate}_a \geq \tau . \qquad (3)
 ```
 
 The threshold $\tau = 0.30$ is fixed in advance (Section 3.4). Two aspects of this gate are deliberate. First, taking the **minimum** over $\Phi$ — rather than the mean or the maximum — imposes unanimity: an attribute survives only if *every* backbone can read it, so that the transfer we later measure is never carried by a single lucky encoder. A mean gate would let one strong backbone rescue an attribute the others cannot see; the minimum refuses that. Second, unanimity fixes a *single common attribute support* across all three backbones, which is a precondition for the concordance analysis in Equation (5): the three encoders can only be compared on their ranking of a shared set of attributes. The gate is thus not merely a quality filter but the step that makes the cross-architecture comparison well defined.
