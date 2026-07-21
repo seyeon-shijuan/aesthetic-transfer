@@ -8,44 +8,41 @@ Each domain provides images $x$ and a human aesthetic score $s(x) \in \mathbb{R}
 
 **Probe.** For a given attribute $a$ and backbone $\varphi$, we fit a linear ridge probe $g_a$ on the attribute-source training features to predict the attribute label:
 
-$$
-g_a \;=\; \arg\min_{w \in \mathbb{R}^{768}} \; \sum_{x \in \mathcal{D}_A^{\text{train}}} \big(w^\top \varphi(x) - a(x)\big)^2 \;+\; \lambda \, \|w\|_2^2 . \tag{1}
-$$
+```math
+g_a \;=\; \arg\min_{w \in \mathbb{R}^{768}} \; \sum_{x \in \mathcal{D}_A^{\text{train}}} \big(w^\top \varphi(x) - a(x)\big)^2 \;+\; \lambda \, \|w\|_2^2 . \qquad (1)
+```
 
 The ridge penalty keeps the probe low-capacity by design. A linear probe [8] that reads an attribute well demonstrates that the attribute axis is *already present* in the frozen representation $\varphi$, rather than being synthesized by a high-capacity head. This interpretive contract — that the read reflects the representation, not the reader — is the reason every downstream design choice in this section is biased toward the *least* expressive option available: a linear (not kernel or MLP) probe, a single pooled feature (not a trained aggregation), and a fixed regularization. Any expressiveness we add to the probe is expressiveness we could no longer attribute to the encoder.
 
 **Attribute explanatory power.** Given a fitted probe, we measure how well the *predicted* attribute explains the *human aesthetic score* in an arbitrary domain $\mathcal{D}$, using Spearman's rank correlation coefficient (SRCC):
 
-$$
-r_a(\mathcal{D}, \varphi) \;=\; \operatorname{SRCC}\Big( \big\{\, g_a(\varphi(x)) \,\big\}_{x \in \mathcal{D}},\; \big\{\, s(x) \,\big\}_{x \in \mathcal{D}} \Big) . \tag{2}
-$$
+```math
+r_a(\mathcal{D}, \varphi) \;=\; \operatorname{SRCC}\Big( \big\{\, g_a(\varphi(x)) \,\big\}_{x \in \mathcal{D}},\; \big\{\, s(x) \,\big\}_{x \in \mathcal{D}} \Big) . \qquad (2)
+```
 
 We use rank correlation rather than $R^2$ so that the quantity is invariant to any monotonic rescaling between the probe output and the aesthetic score. This invariance is not a cosmetic choice: the probe is trained to predict an AADB attribute on a $[0,1]$-style scale, but is then correlated against aesthetic scores on entirely different scales in AVA and BAID. A rank statistic asks only whether the probe *orders* images the way human aesthetic preference does — which is the question of transfer, and sidesteps the incomparable score distributions of the two target datasets.
 
 **Readability gate.** An attribute is admitted to the analysis only if its probe reads reliably on held-out attribute-source data, *unanimously* across all three backbones:
 
-$$
-\operatorname{gate}_a \;=\; \min_{\varphi \in \Phi} \, r_a\big(\mathcal{D}_A^{\text{test}}, \varphi\big),
-\qquad a \ \text{is \emph{readable}} \iff \operatorname{gate}_a \geq \tau . \tag{3}
-$$
+```math
+\operatorname{gate}_a \;=\; \min_{\varphi \in \Phi} \, r_a\big(\mathcal{D}_A^{\text{test}}, \varphi\big), \qquad a \ \text{ is readable} \iff \operatorname{gate}_a \geq \tau . \qquad (3)
+```
 
 The threshold $\tau = 0.30$ is fixed in advance (Section 3.4). Two aspects of this gate are deliberate. First, taking the **minimum** over $\Phi$ — rather than the mean or the maximum — imposes unanimity: an attribute survives only if *every* backbone can read it, so that the transfer we later measure is never carried by a single lucky encoder. A mean gate would let one strong backbone rescue an attribute the others cannot see; the minimum refuses that. Second, unanimity fixes a *single common attribute support* across all three backbones, which is a precondition for the concordance analysis in Equation (5): the three encoders can only be compared on their ranking of a shared set of attributes. The gate is thus not merely a quality filter but the step that makes the cross-architecture comparison well defined.
 
 **Transfer shift.** For each readable attribute we apply the *photo-trained* probe, without any refitting, to both media, and take the difference in explanatory power between the photographic and artistic domains:
 
-$$
-T_a \;=\; \bar r_a(\mathcal{D}_P) - \bar r_a(\mathcal{D}_R),
-\qquad
-\bar r_a(\mathcal{D}) \;=\; \frac{1}{|\Phi|} \sum_{\varphi \in \Phi} r_a(\mathcal{D}, \varphi) . \tag{4}
-$$
+```math
+T_a \;=\; \bar r_a(\mathcal{D}_P) - \bar r_a(\mathcal{D}_R), \qquad \bar r_a(\mathcal{D}) \;=\; \frac{1}{|\Phi|} \sum_{\varphi \in \Phi} r_a(\mathcal{D}, \varphi) . \qquad (4)
+```
 
 A positive $T_a$ marks a **photo-specific** axis, whose aesthetic relevance does not survive transfer to art; a negative $T_a$ marks an axis that is *more* aesthetically relevant in art than in photography. The probe is *not* refitted on the target domain — the same photographic probe is carried unchanged into art. This is what isolates transfer from adaptation — we measure how a photographically-defined aesthetic axis behaves in art, not how well a fresh art-trained probe would perform. Refitting would answer a different, easier question and would destroy the diagnostic we are after.
 
 **Representation invariance.** To test whether the ordering of shifts is a property of the domain pair rather than of any single encoder, we compute Kendall's coefficient of concordance $W$ over the rankings that the $m = |\Phi|$ backbones assign to the $n$ readable attributes by their shift $T_a$:
 
-$$
-W \;=\; \frac{12\,S}{m^2\,(n^3 - n)} , \tag{5}
-$$
+```math
+W \;=\; \frac{12\,S}{m^2\,(n^3 - n)} , \qquad (5)
+```
 
 where $S$ is the sum of squared deviations of the per-attribute summed ranks from their mean. $W = 1$ denotes perfect agreement across backbones and $W = 0$ denotes none. We assess its significance by a permutation test (Section 4.4) rather than a parametric table, because $n$ is small and the parametric null for $W$ is only asymptotically valid.
 

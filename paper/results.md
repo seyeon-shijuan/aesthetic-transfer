@@ -34,7 +34,9 @@ Seven of eleven attributes pass (Table 1). The four that fail -- RuleOfThirds, S
 
 For each of the seven readable attributes we apply the photo-trained probe $g_a$ -- without any refitting -- to both domains and measure how well it explains the human aesthetic score in each. The transfer shift
 
-$$T_a = r_a(\mathcal{D}_P) - r_a(\mathcal{D}_R)$$
+```math
+T_a = r_a(\mathcal{D}_P) - r_a(\mathcal{D}_R)
+```
 
 quantifies how much of an attribute's explanatory power is lost (or gained) when moving from photography to art, where $r_a(\mathcal{D}) = \mathrm{SRCC}(g_a(\varphi(\mathcal{D})),\ \text{score})$. Table 2 reports values averaged over the three backbones, with 95% bootstrap confidence intervals (2000 resamples); the final column gives the bootstrap probability of the opposite sign, and all seven shifts are significant at $p < 0.001$.
 
