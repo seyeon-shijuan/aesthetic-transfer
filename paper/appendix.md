@@ -2,7 +2,8 @@
 
 We record every sample excluded from analysis and every processing decision that
 affects which items enter a correlation, so that all reported numbers can be
-reproduced exactly.
+reproduced exactly. All code, feature-extraction scripts, and the exclusion logs
+described below are available at https://github.com/seyeon-shijuan/aesthetic-transfer.
 
 ## A.1 Dataset exclusions
 
@@ -47,6 +48,6 @@ reproduces the direct evaluation exactly (BAID SRCC 0.199).
 
 The following were registered before any result was observed: readability threshold
 τ = 0.30; the unanimity rule (readable iff gate SRCC ≥ τ for all three backbones);
-ridge regularisation α = 10; the pooled 768-d feature for all backbones; and the AVA
+ridge regularization λ = 10; the pooled 768-d feature for all backbones; and the AVA
 sampling seed (42). The ablation in Section 4.7 confirms the readable set is
-insensitive to τ and α within the ranges tested.
+insensitive to τ and λ within the ranges tested.
