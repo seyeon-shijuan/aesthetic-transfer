@@ -11,13 +11,13 @@ bars = ax.bar(models, art, color=colors)
 for b,v in zip(bars,art):
     ax.text(b.get_x()+b.get_width()/2, v+0.01, f"{v:.3f}", ha="center", fontsize=10)
 ax.set_ylabel("SRCC on artistic domain (BAID)")
-ax.set_title("Aesthetic competence on art by specialisation")
+ax.set_title("Aesthetic competence on art by specialization")
 ax.set_ylim(0,0.55)
 from matplotlib.patches import Patch
 ax.legend(handles=[Patch(color="#d1495b",label="Photo-specialist"),
                    Patch(color="#e8a35c",label="Multi-domain"),
                    Patch(color="#3a7ca5",label="Art-specialist")], fontsize=8)
 plt.tight_layout()
-plt.savefig("results/fig3_grid.png", dpi=200, bbox_inches="tight")
-plt.savefig("results/fig3_grid.pdf", bbox_inches="tight")
-print("saved fig3")
+plt.savefig("fig3_grid.png", dpi=200, bbox_inches="tight")
+plt.savefig("fig3_grid.pdf", bbox_inches="tight")
+print("saved fig3 (specialization)")
